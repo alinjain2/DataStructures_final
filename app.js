@@ -1,20 +1,17 @@
-// Listen for changes in the inputs to auto-update
+
 document.getElementById('input-n').addEventListener('input', updateUI);
 document.getElementById('input-a').addEventListener('input', updateUI);
 document.getElementById('input-msg').addEventListener('input', updateUI);
 
 function updateUI() {
-  // 1. Get values from the DOM
   const N = parseInt(document.getElementById('input-n').value) || 35;
   const a = parseInt(document.getElementById('input-a').value) || 3;
   const M = parseInt(document.getElementById('input-msg').value) || 7;
   
   const outputDiv = document.getElementById('output');
 
-  // 2. Run the pure logic function
   const result = runSimulation(N, a, M);
 
-  // 3. Render the results based on the pure data
   if (result.error) {
     outputDiv.innerHTML = `<p style="color: red;"><strong>Error:</strong> ${result.error}</p>`;
     return;
