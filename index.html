@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shor's Algorithm Simulator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ─── YOUR SITE COLORS & FONTS ─── */
+    :root {
+      --bg-dark: #070a13;
+      --bg-card: #0d1222;
+      --bg-input: #131b30;
+      --border: #1e2942;
+      --cyan: #00e5ff;
+      --violet: #9c6fff;
+      --emerald: #00e676;
+      --rose: #ff4d6d;
+      --text-primary: #e2ecff;
+      --text-secondary: #7e95bd;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3 {
+      color: var(--text-primary);
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    span.accent {
+      color: var(--cyan);
+    }
+
+    /* ─── BASIC INPUT STYLING ─── */
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    input {
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      padding: 8px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      width: 100%;
+    }
+
+    input:focus {
+      border-color: var(--cyan);
+      outline: none;
+    }
+
+    small {
+      display: block;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      margin-top: 4px;
+    }
+
+    /* ─── RESULTS CONTAINER ─── */
+    .results-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>RSA <span class="accent">&</span> Shor's Simulator</h1>
+    <p style="color: var(--text-secondary);">A simple tool to demonstrate factoring composite numbers.</p>
+  </header>
+
+  <main>
+    <div class="input-group">
+      <label for="input-n">Modulus to Factor (N)</label>
+      <input type="number" id="input-n" value="35">
+      <small>Composite number to split into prime factors p and q.</small>
+    </div>
+
+    <div class="input-group">
+      <label for="input-a">Random Base (a)</label>
+      <input type="number" id="input-a" value="3">
+      <small>Must share no common factors with N (coprime).</small>
+    </div>
+
+    <div class="input-group">
+      <label for="input-msg">Test Message (M)</label>
+      <input type="number" id="input-msg" value="7">
+      <small>Integer to encrypt/decrypt to verify the recovered keys.</small>
+    </div>
+
+    <div class="results-card" id="output">
+      <p style="color: var(--text-secondary); text-align: center;">Awaiting inputs...</p>
+    </div>
+  </main>
+
+  <script src="logic.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
