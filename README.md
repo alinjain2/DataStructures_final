@@ -11,6 +11,9 @@ logic.js – Main logic file. Math functions (like GCD and loops to find the per
 app.js – It listens for when you type a number in the box, sends it to logic.js, and prints the results back on the screen.
 
 SimulatesGCD Check: checks if your base input accidentally factors N without needing any complex steps.
+
 Period Finding: Simulates Shor's by searching for the repeating cycle where a^r= 1 (mod N)
+
 Key Cracking: Takes that cycle, splits it to find the secret prime factors p and q, and builds the private decryption key d.
+
 RSA Test: Runs a sample message through the whole encryption/decryption loop to prove the hacked keys actually work.
